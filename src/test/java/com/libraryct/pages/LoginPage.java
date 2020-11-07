@@ -20,6 +20,14 @@ public class LoginPage {
     @FindBy(css ="[type='submit']")
     public WebElement signinBtn;
 
+    @FindBy(linkText = "Books")
+    public WebElement books;
+
+    @FindBy(linkText = "Borrowing Books")
+    public WebElement borrowingBooks;
+
+
+
 
     public void loginAsStudent() {
         email.sendKeys(ConfigurationReader.get("student_email"));

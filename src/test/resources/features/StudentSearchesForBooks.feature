@@ -1,4 +1,4 @@
-Feature: 
+Feature: Student searches for book categories
 
 	#*User Stories:* 
 	# # As a students, I should be able to search books with different categories.
@@ -26,7 +26,7 @@ Feature:
 		|Essay|
 		|Menoir|
 		|Poetry|
-		And the only selected Category of books should appear under results table. 
+		Then the only selected Category of books should appear under results table.
 		Examples: 
 		      |email               |password|
 			  |student94@library   |KccVOoLA|

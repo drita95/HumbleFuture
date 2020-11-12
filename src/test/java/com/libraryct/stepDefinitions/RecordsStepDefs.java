@@ -19,11 +19,11 @@ public class RecordsStepDefs {
     @Given("user login as a librarian")
     public void user_login_as_a_librarian() {
        new LoginPage().loginAsLibrarian();
-        BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(5);
     }
     @Then("click Books")
     public void click_Books() {
-      new LoginPage().books.click();
+      new HomePage().books.click();
       BrowserUtils.waitFor(2);
     }
     @Then("default {string} records")

@@ -1,5 +1,6 @@
 package com.libraryct.pages;
 
+import com.libraryct.utilities.BrowserUtils;
 import com.libraryct.utilities.ConfigurationReader;
 import com.libraryct.utilities.Driver;
 import org.openqa.selenium.WebElement;
@@ -39,6 +40,7 @@ public class LoginPage {
         email.sendKeys(ConfigurationReader.get("librarian_email"));
         password.sendKeys(ConfigurationReader.get("librarian_password"));
         signinBtn.click();
+        BrowserUtils.waitFor(2);
     }
 
 

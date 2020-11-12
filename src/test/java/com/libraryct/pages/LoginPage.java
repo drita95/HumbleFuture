@@ -1,5 +1,6 @@
 package com.libraryct.pages;
 
+import com.libraryct.utilities.BrowserUtils;
 import com.libraryct.utilities.ConfigurationReader;
 import com.libraryct.utilities.Driver;
 import org.openqa.selenium.WebElement;
@@ -20,6 +21,14 @@ public class LoginPage {
     @FindBy(css ="[type='submit']")
     public WebElement signinBtn;
 
+    @FindBy(linkText = "Books")
+    public WebElement books;
+
+    @FindBy(linkText = "Borrowing Books")
+    public WebElement borrowingBooks;
+
+
+
 
     public void loginAsStudent() {
         email.sendKeys(ConfigurationReader.get("student_email"));
@@ -31,6 +40,7 @@ public class LoginPage {
         email.sendKeys(ConfigurationReader.get("librarian_email"));
         password.sendKeys(ConfigurationReader.get("librarian_password"));
         signinBtn.click();
+        BrowserUtils.waitFor(2);
     }
 
 

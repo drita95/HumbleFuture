@@ -60,6 +60,7 @@ public class LoginPage {
         email.sendKeys(ConfigurationReader.get("librarian_email"));
         password.sendKeys(ConfigurationReader.get("librarian_password"));
         signinBtn.click();
+        BrowserUtils.waitFor(2);
     }
 
     public void accessmodule(String module) {

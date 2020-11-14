@@ -1,4 +1,3 @@
-package com.libraryct.pages;
 
 import com.libraryct.utilities.BrowserUtils;
 import com.libraryct.utilities.Driver;
@@ -41,6 +40,12 @@ public class HomePage {
 
     @FindBy(xpath = "//*[@id=\"dashboard\"]/div/div/div[1]/div/div/div[2]/h6")
     public WebElement usersindashboard;
+  
+    @FindBy(id="book_categories")
+    public WebElement bookCategoryDropDown;
+
+    @FindBy(css="table tbody tr td:nth-child(5)")
+    public List<WebElement> categoryColumn;
 
     public void accessmodule(String module) {
 

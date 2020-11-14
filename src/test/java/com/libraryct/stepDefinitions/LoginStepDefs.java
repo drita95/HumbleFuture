@@ -14,6 +14,7 @@ public class LoginStepDefs {
 
     @Given("the user navigates to login page")
     public void the_user_navigates_to_login_page() {
+
         Driver.get().get(ConfigurationReader.get("url"));
     }
 

@@ -1,5 +1,7 @@
 package com.libraryct.stepDefinitions;
 
+import com.libraryct.utilities.BrowserUtils;
+import com.libraryct.utilities.ConfigurationReader;
 import com.libraryct.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -13,9 +15,13 @@ public class Hooks {
 
     @Before
     public void setUp(){
+
+
+        Driver.get().get(ConfigurationReader.get("url"));
+        BrowserUtils.waitForPageToLoad(3);
         Driver.get().manage().window().maximize();
-        System.out.println("\tthis is coming from BEFORE");
         Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
     }
 
     @After

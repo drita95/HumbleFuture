@@ -3,9 +3,12 @@ package com.libraryct.pages;
 import com.libraryct.utilities.BrowserUtils;
 import com.libraryct.utilities.ConfigurationReader;
 import com.libraryct.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class LoginPage {
     public LoginPage(){
@@ -21,11 +24,7 @@ public class LoginPage {
     @FindBy(css ="[type='submit']")
     public WebElement signinBtn;
 
-    @FindBy(linkText = "Books")
-    public WebElement books;
 
-    @FindBy(linkText = "Borrowing Books")
-    public WebElement borrowingBooks;
 
 
 

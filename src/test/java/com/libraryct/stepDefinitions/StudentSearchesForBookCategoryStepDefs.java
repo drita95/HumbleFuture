@@ -1,35 +1,52 @@
 package com.libraryct.stepDefinitions;
 
+import com.libraryct.pages.HomePage;
+import com.libraryct.pages.LoginPage;
+import com.libraryct.utilities.BrowserUtils;
+import com.libraryct.utilities.ConfigurationReader;
+import com.libraryct.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class StudentSearchesForBookCategoryStepDefs {
 
-    @Given("the student logs in using {string} and {string}")
-    public void the_student_logs_in_using_and(String string, String string2) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Given("a student loged in")
+    public void a_student_loged_in() {
+        new LoginPage().loginAsStudent();
     }
 
-    @When("the user clicks an {string} from following category dropdown:")
-    public void the_user_clicks_an_from_following_category_dropdown(String string, io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new io.cucumber.java.PendingException();
+    @When("the user clicks an {string} from Book Categories Dropdown")
+    public void the_user_clicks_an_from_Book_Categories_Dropdown(String option) {
+        HomePage homePage = new HomePage();
+
+        BrowserUtils.waitForVisibility(homePage.bookCategoryDropDown,10);
+        Select s = new Select(homePage.bookCategoryDropDown);
+        List<WebElement> options = s.getOptions();
+
+        System.out.println("options = " + BrowserUtils.getElementsText(options).toString());
+        s.selectByVisibleText(option);
+
     }
 
-    @Then("the only selected Category of books should appear under results table.")
+    @Then("the only selected Category of books should appear under results table")
     public void the_only_selected_Category_of_books_should_appear_under_results_table() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+        HomePage homePage = new HomePage();
 
+
+        Select sel = new Select(homePage.bookCategoryDropDown);
+        BrowserUtils.waitFor(3);
+        String selected = sel.getFirstSelectedOption().getText();
+        List<String> actualCat = BrowserUtils.getElementsText(homePage.categoryColumn);
+        for (String el:actualCat) {
+            Assert.assertEquals(selected,el);
+        }
+    }
 
 
 }

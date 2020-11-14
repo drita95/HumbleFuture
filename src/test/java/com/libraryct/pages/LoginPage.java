@@ -1,5 +1,6 @@
 package com.libraryct.pages;
 
+import com.libraryct.utilities.BrowserUtils;
 import com.libraryct.utilities.ConfigurationReader;
 import com.libraryct.utilities.Driver;
 import org.openqa.selenium.WebElement;
@@ -22,18 +23,22 @@ public class LoginPage {
 
 
     public void loginAsStudent() {
+
         email.sendKeys(ConfigurationReader.get("student_email"));
         password.sendKeys(ConfigurationReader.get("student_password"));
         signinBtn.click();
     }
 
     public void loginAsStudent(String user,String passcode) {
+
         email.sendKeys(user);
         password.sendKeys(passcode);
         signinBtn.click();
     }
 
     public void loginAsLibrarian() {
+        Driver.get().get(ConfigurationReader.get("url"));
+        BrowserUtils.waitForPageToLoad(3);
         email.sendKeys(ConfigurationReader.get("librarian_email"));
         password.sendKeys(ConfigurationReader.get("librarian_password"));
         signinBtn.click();

@@ -1,5 +1,7 @@
 package com.libraryct.stepDefinitions;
 
+import com.libraryct.utilities.BrowserUtils;
+import com.libraryct.utilities.ConfigurationReader;
 import com.libraryct.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -11,7 +13,9 @@ public class Hooks {
 
     @Before
     public void setUp(){
-        System.out.println("\tthis is coming from BEFORE");
+
+        Driver.get().get(ConfigurationReader.get("url"));
+        BrowserUtils.waitForPageToLoad(3);
     }
 
     @After

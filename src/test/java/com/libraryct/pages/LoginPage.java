@@ -3,9 +3,12 @@ package com.libraryct.pages;
 import com.libraryct.utilities.BrowserUtils;
 import com.libraryct.utilities.ConfigurationReader;
 import com.libraryct.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class LoginPage {
     public LoginPage(){
@@ -20,6 +23,10 @@ public class LoginPage {
 
     @FindBy(css ="[type='submit']")
     public WebElement signinBtn;
+
+
+
+
 
 
     public void loginAsStudent() {
@@ -42,6 +49,7 @@ public class LoginPage {
         email.sendKeys(ConfigurationReader.get("librarian_email"));
         password.sendKeys(ConfigurationReader.get("librarian_password"));
         signinBtn.click();
+        BrowserUtils.waitFor(2);
     }
 
 

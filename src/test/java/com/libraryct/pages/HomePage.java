@@ -65,6 +65,12 @@ public class HomePage {
         }
     }
 
+    @FindBy(id="navbarDropdown")
+    public WebElement LogOutDropdown;
+
+    @FindBy(linkText ="Log Out")
+    public WebElement DritaLogOut;
+
 
 
 }

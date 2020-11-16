@@ -1,4 +1,8 @@
 
+package com.libraryct.pages;
+
+
+
 import com.libraryct.utilities.BrowserUtils;
 import com.libraryct.utilities.Driver;
 import org.junit.Assert;
@@ -63,6 +67,13 @@ public class HomePage {
             Assert.assertTrue(usersindashboard.isDisplayed());
         }
     }
+
+
+    @FindBy(id="navbarDropdown")
+    public WebElement LogOutDropdown;
+
+    @FindBy(linkText ="Log Out")
+    public WebElement DritaLogOut;
 
 
 

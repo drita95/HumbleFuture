@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
 
         tags = "@EUG17-227"
 
-        tags = "@EUG17-236"
+
 
 
 )

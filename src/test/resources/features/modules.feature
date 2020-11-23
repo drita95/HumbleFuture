@@ -1,8 +1,8 @@
-Feature: 
+Feature: As a user, I should be able to see seveal modules once login.
 @smoke
 	#User story:
 	#
-	#As a user, I should be able to see seveal modules once login.
+
 	@EUG17-229
 	Scenario Outline: The user see several modules once login.
 		Given the user navigates to login page

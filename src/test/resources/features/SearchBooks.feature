@@ -1,5 +1,5 @@
 Feature: Searching books with different categories
-
+@smoke
   @wip
   Scenario:As a student, I should be able to search books with different categories.
     Given the student is logged into the app

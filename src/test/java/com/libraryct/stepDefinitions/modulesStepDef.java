@@ -39,7 +39,7 @@ public class modulesStepDef {
 
 
         new HomePage().accessmodule(options);
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(3);
     }
 
 

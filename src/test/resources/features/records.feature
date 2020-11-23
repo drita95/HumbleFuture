@@ -1,5 +1,5 @@
 Feature: 
-
+@smoke
 	#As a students, I should be able to see tables with default info
 	@EUG17-233
 	Scenario: As a librarian, I should be able to see book records on user page

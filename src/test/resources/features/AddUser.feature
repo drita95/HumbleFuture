@@ -6,8 +6,7 @@ Feature: User management
 	#Acceptance Criteria:
 	#4.1 add users with all valid info.
 	#4.2. Librarians able to close the add user window with "close" button
-	#4.3. Librarians able to edit user info.
-
+	#4.3. Librarians able to edit user info
 
 	Scenario Outline: Add users with valid info
 		Given User is logged in as Librarian

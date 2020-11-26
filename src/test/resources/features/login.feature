@@ -1,5 +1,6 @@
-Feature: login
 @smoke
+Feature: login
+
 	#User Stories:  # As a user, I should be able to login to the library app.
 	#
 	#Acceptance Criteria: 

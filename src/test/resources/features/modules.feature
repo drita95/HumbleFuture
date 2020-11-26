@@ -1,5 +1,7 @@
-Feature: As a user, I should be able to see seveal modules once login.
+
 @smoke
+Feature: As a user, I should be able to see seveal modules once login.
+
 	#User story:
 	#
 

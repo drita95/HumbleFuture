@@ -1,3 +1,4 @@
+@smoke
 Feature: log-out
 	Background:
 		Given the user navigates to login page

@@ -1,4 +1,5 @@
-Feature: 
+@smoke
+Feature:
 
 	#User story:
 	#
@@ -7,7 +8,7 @@ Feature:
 	Scenario Outline: The user see several modules once login.
 		Given the user navigates to login page
 		When user login as a student 
-		Then user see "<module>"
+		Then user see <module>
 		Examples:
 		         |module|
 		         | Books | 

@@ -1,3 +1,4 @@
+@smoke
 Feature: Searching books with different categories
 
   @wip
